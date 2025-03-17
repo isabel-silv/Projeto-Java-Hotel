@@ -1,0 +1,40 @@
+{
+  "reservas": [
+    {
+      "id": "a194",
+      "nome": "mario",
+      "email": "mario@email.com",
+      "entrada": "2024-10-20",
+      "saida": "2024-10-25",
+      "adultos": "2",
+      "criancas": "0"
+    },
+    {
+      "id": "fc31",
+      "nome": "Camila",
+      "email": "camila@email.com",
+      "entrada": "2024-10-05",
+      "saida": "2024-10-10",
+      "adultos": "2",
+      "criancas": "2"
+    },
+    {
+      "id": "b4ec",
+      "nome": "Matheus",
+      "email": "matheus@email.com",
+      "entrada": "2024-11-30",
+      "saida": "2024-12-01",
+      "adultos": "1",
+      "criancas": "0"
+    },
+    {
+      "id": "8c48",
+      "nome": "Matheus",
+      "email": "matheus@email.com",
+      "entrada": "2024-11-30",
+      "saida": "2024-12-01",
+      "adultos": "1",
+      "criancas": "0"
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservas</title>
+    <link href="./bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="hotel.css">
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            fetch('http://localhost:3000/reservas')
+                .then(response => response.json())
+                .then(data => {
+                    const tabela = document.getElementById('tabela-reservas');
+                    data.forEach(reserva => {
+                        const row = tabela.insertRow();
+                        row.insertCell(0).innerText = reserva.nome;
+                        row.insertCell(1).innerText = reserva.email;
+                        row.insertCell(2).innerText = reserva.entrada;
+                        row.insertCell(3).innerText = reserva.saida;
+                        row.insertCell(4).innerText = reserva.adultos;
+                        row.insertCell(5).innerText = reserva.criancas;
+                        row.insertCell(6).innerText = reserva.observacoes;
+                    });
+                });
+        });
+    </script>
+</head>
+<body>
+    <div class="container my-5">
+        <h2 class="text-center">Solicitações de Reservas</h2>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>E-mail</th>
+                    <th>Data de Entrada</th>
+                    <th>Data de Saída</th>
+                    <th>Adultos</th>
+                    <th>Crianças</th>
+                    <th>Observações</th>
+                </tr>
+            </thead>
+            <tbody id="tabela-reservas">
+                <!-- Dados serão inseridos aqui -->
+            </tbody>
+        </table>
+    </div>
+    <script src="jquery.js"></script>
+    <script type="module" src="reservas.js"></script>
+    <script src="./bootstrap/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

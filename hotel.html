@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rede de Hotéis</title>
+    <link href="./bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="hotel.css">
+</head>
+<body>
+    <header class="bg-light p-3">
+      <div class="container d-flex justify-content-between align-items-center">
+        <div class="menu-icon" onclick="toggleMenu()">⋯</div>
+        <nav id="menu" class="hidden">
+          <ul class="nav">
+            <li class="nav-item"><a class="nav-link" href="#">Sobre o hotel</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Acomodações</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Reservas</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <div class="container my-4">
+      <div class="img-container">
+        <img src="./imagem/logo.jfif" width="50" height="50" alt="Imagem R">
+      </div>
+      <div class="content">
+        <div class="row">
+          <div class="col-md-6 description-container">
+            <h3>Sinta o conforto acolhedor de nossas hospedagens</h3>
+            <h6>Hospede-se nos nossos hotéis com quartos a partir de R$100,00.</h6>
+            <a href="#" class="btn btn-primary mt-3">Saiba mais</a>
+          </div>
+          <div class="col-md-6 imge-container">
+            <img src="./imagem/hotel.jfif" width="700" height="700" class="img-fluid" alt="Imagem R">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row text-center">
+      <h2>Por que se hospedar em nossos hotéis?</h2>
+      <div class="col-md-6 col-lg-4">
+        <div class="icon-text">
+          <img src="./imagem/cafe.png" width="30" height="30" alt="Imagem R">
+          <div class="text-content">
+            <p class="title">Delicioso café da manhã</p>
+            <h5>Inclui em todas as diárias</h5>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <div class="icon-text">
+          <img src="./imagem/local.png" width="30" height="30" alt="Imagem R">
+          <div class="text-content">
+            <p class="title">Fácil acesso</p>
+            <h5>Perto dos principais pontos turísticos</h5>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="loan-box">
+      <div class="my-5">
+        <h3 class="text-center">Nossos Quartos</h3>
+        <div class="row">
+          <div class="col-md-4">
+            <img src="./imagem/quartosolteiro.jpg" class="img-fluid" alt="Suíte Solteiro">
+            <h4 class="text-center">Suíte Solteiro</h4>
+          </div>
+          <div class="col-md-4">
+            <img src="./imagem/casal.jfif" class="img-fluid" alt="Suíte Casal">
+            <h4 class="text-center">Suíte Casal</h4>
+          </div>
+          <div class="col-md-4">
+            <img src="./imagem/quartocasal.jfif" class="img-fluid" alt="Suíte Master">
+            <h4 class="text-center">Suíte Master</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="form-container my-5">
+      <div class="form-info text-center">
+        <h5>FAÇA SUA RESERVA</h5>
+        <p class="form-description">Entre em contato conosco informando as datas desejadas. Lhe retornaremos informando a disponibilidade e repassando detalhes da reserva.</p>
+      </div>
+      <div class="form-fields">
+        <form id="reservaForm">
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="nome">Nome</label>
+              <input type="text" class="form-control" id="nome" name="nome" required>
+            </div>
+            <div class="form-group col-md-6">
+              <label for="email">E-mail</label>
+              <input type="email" class="form-control" id="email" name="email" required>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="entrada">Data de entrada</label>
+              <input type="date" class="form-control" id="entrada" name="entrada" required>
+            </div>
+            <div class="form-group col-md-6">
+              <label for="saida">Data de saída</label>
+              <input type="date" class="form-control" id="saida" name="saida" required>
+            </div>
+          </div>
+          
+          <div class="form-row">
+            <form id="reservaForm">
+            <div class="form-group col-md-6">
+              <label for="observacoes">Observações</label>
+              <textarea class="form-control" id="observacoes" rows="4"></textarea>
+            </div>
+            <div class="form-group col-md-6">
+              <label for="adultos">Adultos</label>
+              <select class="form-control" id="adultos" name="adultos" required>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+              </select>
+            </div>
+            <div class="form-group col-md-6">
+              <label for="criancas">Crianças</label>
+              <select class="form-control" id="criancas" name="criancas" required>
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+              </select>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary">Enviar</button>
+        </form>
+      </form>
+      </div>
+    </div>
+    <script>
+      document.getElementById('reservaForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+        const formData = new FormData(event.target);
+        const data = Object.fromEntries(formData.entries());
+    
+        fetch('http://localhost:3000/reservas', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(data)
+        }).then(response => response.json())
+          .then(data => console.log(data))
+          .catch(error => console.error('Erro:', error));
+      });
+    </script>
+    <script src="jquery.js"></script>
+    <script src="hotel.js"></script>
+    <script src="./bootstrap/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
